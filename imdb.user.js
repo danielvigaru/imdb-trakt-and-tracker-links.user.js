@@ -1,3 +1,7 @@
+/**
+ * @prettier
+ */
+
 // ==UserScript==
 // @name             IMDB links
 // @icon             https://www.imdb.com/favicon.ico
@@ -20,8 +24,7 @@ window.onload = () => {
   let movieId = getIMDBid();
 
   if (movieId) {
-    let linkConstructor =
-      "<a style='text-decoration:none; color:white;' target='_blank'";
+    let linkConstructor = "<a style='text-decoration:none; color:white;' target='_blank'";
     let linkRarbg = `${linkConstructor} href='https://rarbgmirror.org/torrents.php?imdb=tt${movieId}'">RARBG</a>`;
     let linkFilelist = `${linkConstructor} href='https://filelist.io/browse.php?search=tt${movieId}'">FileList</a>`;
     let linkTrakt = `${linkConstructor} href='https://trakt.tv/search/imdb?q=tt${movieId}'">Trakt</a>`;
