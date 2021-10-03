@@ -14,20 +14,20 @@
 // @grant            none
 // ==/UserScript==
 
-function getIMDBid() {
+const getIMDBid = () => {
   const regexImdbNum = /\/title\/tt(\d{1,})/;
-  let id = regexImdbNum.exec(document.location);
+  const id = regexImdbNum.exec(document.location);
   return id[1];
-}
+};
 
 window.onload = () => {
-  let movieId = getIMDBid();
+  const movieId = getIMDBid();
 
   if (movieId) {
-    let linkConstructor = "<a style='text-decoration:none; color:white;' target='_blank'";
-    let linkRarbg = `${linkConstructor} href='https://rarbgmirror.org/torrents.php?imdb=tt${movieId}'">RARBG</a>`;
-    let linkFilelist = `${linkConstructor} href='https://filelist.io/browse.php?search=tt${movieId}'">FileList</a>`;
-    let linkTrakt = `${linkConstructor} href='https://trakt.tv/search/imdb?q=tt${movieId}'">Trakt</a>`;
+    const linkConstructor = "<a style='text-decoration:none; color:white;' target='_blank'";
+    const linkRarbg = `${linkConstructor} href='https://rarbgmirror.org/torrents.php?imdb=tt${movieId}'">RARBG</a>`;
+    const linkFilelist = `${linkConstructor} href='https://filelist.io/browse.php?search=tt${movieId}'">FileList</a>`;
+    const linkTrakt = `${linkConstructor} href='https://trakt.tv/search/imdb?q=tt${movieId}'">Trakt</a>`;
 
     let links = document.createElement('div');
     links.innerHTML = `${linkTrakt} · ${linkFilelist} · ${linkRarbg}`;
