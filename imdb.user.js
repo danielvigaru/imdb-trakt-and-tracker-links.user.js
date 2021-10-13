@@ -29,12 +29,12 @@ window.onload = () => {
     const linkFilelist = `${linkConstructor} href='https://filelist.io/browse.php?search=tt${movieId}'">FileList</a>`;
     const linkTrakt = `${linkConstructor} href='https://trakt.tv/search/imdb?q=tt${movieId}'">Trakt</a>`;
 
-    let links = document.createElement('div');
+    const links = document.createElement('div');
     links.innerHTML = `${linkTrakt} · ${linkFilelist} · ${linkRarbg}`;
     links.style.fontFamily = "'Roboto','Helvetica','Arial',sans-serif";
     links.style.fontSize = '.9rem';
 
-    let banner = document.querySelector('.SubNav__SubNavContent-sc-11106ua-3');
+    const banner = document.querySelector('.SubNav__SubNavContent-sc-11106ua-3');
     banner.prepend(links);
   }
 };
