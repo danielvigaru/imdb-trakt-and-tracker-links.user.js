@@ -7,6 +7,7 @@
 // @version          2.3.8
 // @updateURL        https://github.com/danielvigaru/imdb-trakt-and-tracker-links.user.js/raw/main/imdb-trakt-and-tracker-links.user.js
 // @downloadURL      https://github.com/danielvigaru/imdb-trakt-and-tracker-links.user.js/raw/main/imdb-trakt-and-tracker-links.user.js
+// @homepageURL      https://github.com/danielvigaru/imdb-trakt-and-tracker-links.user.js
 // @grant            none
 // ==/UserScript==
 
