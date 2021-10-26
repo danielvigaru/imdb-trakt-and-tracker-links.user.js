@@ -1,7 +1,3 @@
-/**
- * @prettier
- */
-
 // ==UserScript==
 // @name             IMDB links
 // @icon             https://www.imdb.com/favicon.ico
