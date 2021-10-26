@@ -4,9 +4,9 @@
 // @description      Links to torrents and trakt directly from imdb page
 // @license          MIT
 // @include          https://www.imdb.com/*
-// @version          2.3.6
-// @updateURL        https://raw.githubusercontent.com/danielvigaru/imdb.user.js/main/imdb.user.js
-// @downloadURL      https://raw.githubusercontent.com/danielvigaru/imdb.user.js/main/imdb.user.js
+// @version          2.3.7
+// @updateURL        https://github.com/danielvigaru/imdb-trakt-and-tracker-links.user.js/raw/main/imdb-trakt-and-tracker-links.user.js
+// @downloadURL      https://github.com/danielvigaru/imdb-trakt-and-tracker-links.user.js/raw/main/imdb-trakt-and-tracker-links.user.js
 // @grant            none
 // ==/UserScript==
 
