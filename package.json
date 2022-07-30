@@ -1,0 +1,22 @@
+{
+  "name": "imdb-trakt-and-tracker-links",
+  "version": "2.4.0",
+  "description": "To be used with [Violentmonkey](https://violentmonkey.github.io/) or another userscript manager.",
+  "main": "imdb-trakt-and-tracker-links.user.js",
+  "scripts": {
+    "build": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danielvigaru/imdb-trakt-and-tracker-links.user.js.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/danielvigaru/imdb-trakt-and-tracker-links.user.js/issues"
+  },
+  "homepage": "https://github.com/danielvigaru/imdb-trakt-and-tracker-links.user.js#readme",
+  "devDependencies": {
+    "typescript": "^4.7.4"
+  }
+}

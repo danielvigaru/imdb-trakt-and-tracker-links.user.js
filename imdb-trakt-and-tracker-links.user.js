@@ -1,3 +1,4 @@
+"use strict";
 // ==UserScript==
 // @name             IMDB links
 // @icon             https://www.imdb.com/favicon.ico
@@ -10,32 +11,28 @@
 // @homepageURL      https://github.com/danielvigaru/imdb-trakt-and-tracker-links.user.js
 // @grant            none
 // ==/UserScript==
-
 (function () {
     function getIMDBid() {
-        const regexImdbNum = /\/title\/tt(\d{1,})/;
-        const id = regexImdbNum.exec(document.location)[1];
+        var _a, _b;
+        var regexImdbNum = /\/title\/tt(\d{1,})/;
+        var location = String(document.location);
+        var id = (_b = (_a = regexImdbNum.exec(location)) === null || _a === void 0 ? void 0 : _a[1]) !== null && _b !== void 0 ? _b : null;
         return id;
     }
-
     function addLinks() {
-        const movieId = getIMDBid();
-
-        if (!movieId) return;
-
-        const style = "style='text-decoration:none; color:white;' target='_blank'";
-        const linkRarbg = `<a ${style} href='https://rarbgmirror.org/torrents.php?imdb=tt${movieId}'">RARBG</a>`;
-        const linkFilelist = `<a ${style} href='https://filelist.io/browse.php?search=tt${movieId}'">FileList</a>`;
-        const linkTrakt = `<a ${style} href='https://trakt.tv/search/imdb?q=tt${movieId}'">Trakt</a>`;
-
-        const links = document.createElement("div");
-        links.innerHTML = `${linkTrakt} · ${linkFilelist} · ${linkRarbg}`;
+        var movieId = getIMDBid();
+        if (!movieId)
+            return;
+        var style = "style='text-decoration:none; color:white;' target='_blank'";
+        var linkRarbg = "<a ".concat(style, " href='https://rarbgmirror.org/torrents.php?imdb=tt").concat(movieId, "'\">RARBG</a>");
+        var linkFilelist = "<a ".concat(style, " href='https://filelist.io/browse.php?search=tt").concat(movieId, "'\">FileList</a>");
+        var linkTrakt = "<a ".concat(style, " href='https://trakt.tv/search/imdb?q=tt").concat(movieId, "'\">Trakt</a>");
+        var links = document.createElement("div");
+        links.innerHTML = "".concat(linkTrakt, " \u00B7 ").concat(linkFilelist, " \u00B7 ").concat(linkRarbg);
         links.style.fontFamily = "'Roboto', sans-serif";
         links.style.fontSize = "0.9rem";
-
-        const banner = document.querySelector("[data-testid='hero-subnav-bar-left-block']");
-        banner.prepend(links);
+        var banner = document.querySelector("[data-testid='hero-subnav-bar-left-block']");
+        banner === null || banner === void 0 ? void 0 : banner.prepend(links);
     }
-
     addLinks();
 })();

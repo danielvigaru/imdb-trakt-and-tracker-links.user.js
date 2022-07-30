@@ -1,0 +1,12 @@
+{
+    "compilerOptions": {
+        "target": "ES5",
+        "module": "None",
+        "declaration": false,
+        "outDir": "./",
+        "strict": true,
+        "removeComments": false
+    },
+    "include": ["src"],
+    "exclude": ["node_modules"]
+}
