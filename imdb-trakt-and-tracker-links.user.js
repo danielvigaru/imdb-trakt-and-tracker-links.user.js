@@ -4,7 +4,7 @@
 // @description      Links to torrents and trakt directly from imdb page
 // @license          MIT
 // @include          https://www.imdb.com/*
-// @version          2.4.1
+// @version          2.4.2
 // @updateURL        https://github.com/danielvigaru/imdb-trakt-and-tracker-links.user.js/raw/main/imdb-trakt-and-tracker-links.user.js
 // @downloadURL      https://github.com/danielvigaru/imdb-trakt-and-tracker-links.user.js/raw/main/imdb-trakt-and-tracker-links.user.js
 // @homepageURL      https://github.com/danielvigaru/imdb-trakt-and-tracker-links.user.js
@@ -64,6 +64,7 @@
         "font-size": "0.9rem",
         display: "flex",
         gap: "1ch",
+        marginRight: "1.5rem",
     });
 
     const banner = document.querySelector("[data-testid='hero-subnav-bar-left-block']");
