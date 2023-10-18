@@ -4,7 +4,7 @@
 // @description      Links to torrents and trakt directly from imdb page
 // @license          MIT
 // @include          https://www.imdb.com/*
-// @version          2.4.2
+// @version          2.4.3
 // @updateURL        https://github.com/danielvigaru/imdb-trakt-and-tracker-links.user.js/raw/main/imdb-trakt-and-tracker-links.user.js
 // @downloadURL      https://github.com/danielvigaru/imdb-trakt-and-tracker-links.user.js/raw/main/imdb-trakt-and-tracker-links.user.js
 // @homepageURL      https://github.com/danielvigaru/imdb-trakt-and-tracker-links.user.js
@@ -42,24 +42,24 @@
         return linkElement;
     }
 
-    const linkTrakt = createLink("Trakt", `https://trakt.tv/search/imdb?q=tt${movieId}`);
-    const linkRarbg = createLink("RARBG", `https://rarbgmirror.org/torrents.php?imdb=tt${movieId}`);
-    const linkFilelist = createLink(
-        "FileList",
-        `https://filelist.io/browse.php?search=tt${movieId}`
-    );
+    const links = [
+        createLink("Trakt", `https://trakt.tv/search/imdb?q=tt${movieId}`),
+        createLink("FileList", `https://filelist.io/browse.php?search=tt${movieId}`),
+    ];
 
     const separator = document.createElement("span");
     separator.textContent = "·";
 
-    const links = document.createElement("div");
-    links.appendChild(linkTrakt);
-    links.appendChild(separator.cloneNode(true));
-    links.appendChild(linkFilelist);
-    links.appendChild(separator.cloneNode(true));
-    links.appendChild(linkRarbg);
+    const linksElement = document.createElement("div");
+    links.forEach((link, index, array) => {
+        linksElement.appendChild(link);
 
-    setStyles(links, {
+        if (index !== array.length - 1) {
+            linksElement.appendChild(separator.cloneNode(true));
+        }
+    });
+
+    setStyles(linksElement, {
         "font-family": "'Roboto', sans-serif",
         "font-size": "0.9rem",
         display: "flex",
@@ -68,5 +68,5 @@
     });
 
     const banner = document.querySelector("[data-testid='hero-subnav-bar-left-block']");
-    banner?.prepend(links);
+    banner?.prepend(linksElement);
 })();
